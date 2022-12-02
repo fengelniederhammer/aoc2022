@@ -1,5 +1,4 @@
 use std::fs::read_to_string;
-use std::num::ParseIntError;
 
 fn answer_ex1() -> usize {
     ex1(read_to_string("src/day1/input").unwrap())
