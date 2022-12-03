@@ -1,5 +1,6 @@
 use std::fs::read_to_string;
 use std::str::Lines;
+use crate::tests;
 
 fn ex1(input: String) -> usize {
     input.lines()
@@ -62,27 +63,4 @@ fn find_batch((left, middle, right): (&str, &str, &str)) -> char {
     panic!()
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_ex1() {
-        assert_eq!(157, ex1(read_to_string("src/day3/testInput").unwrap()));
-    }
-
-    #[test]
-    fn answer1() {
-        println!("{}", ex1(read_to_string("src/day3/input").unwrap()));
-    }
-
-    #[test]
-    fn test_ex2() {
-        assert_eq!(70, ex2(read_to_string("src/day3/testInput").unwrap()));
-    }
-
-    #[test]
-    fn answer2() {
-        println!("{}", ex2(read_to_string("src/day3/input").unwrap()));
-    }
-}
+tests!(day3, 157, 70);

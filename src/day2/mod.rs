@@ -1,5 +1,6 @@
 use std::fs::read_to_string;
 use crate::day2::RPS::{Paper, Rock, Scissors};
+use crate::tests;
 
 enum RPS {
     Rock,
@@ -87,27 +88,4 @@ fn find_me(other: &RPS, outcome: usize)->RPS {
         .unwrap()
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_ex1() {
-        assert_eq!(15, ex1(read_to_string("src/day2/testInput").unwrap()));
-    }
-
-    #[test]
-    fn answer1() {
-        println!("{}", ex1(read_to_string("src/day2/input").unwrap()));
-    }
-
-    #[test]
-    fn test_ex2() {
-        assert_eq!(12, ex2(read_to_string("src/day2/testInput").unwrap()));
-    }
-
-    #[test]
-    fn answer2() {
-        println!("{}", ex2(read_to_string("src/day2/input").unwrap()));
-    }
-}
+tests!(day2, 15, 12);
