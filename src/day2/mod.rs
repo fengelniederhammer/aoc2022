@@ -88,4 +88,4 @@ fn find_me(other: &RPS, outcome: usize)->RPS {
         .unwrap()
 }
 
-tests!(day2, 15, 12);
+tests!( 15, 12);

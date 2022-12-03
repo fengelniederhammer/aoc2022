@@ -23,4 +23,4 @@ fn ex2(input: String) -> usize {
     elves.into_iter().rev().take(3).sum()
 }
 
-tests!(day1, 24000, 45000);
+tests!(24000, 45000);

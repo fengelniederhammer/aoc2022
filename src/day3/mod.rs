@@ -63,4 +63,4 @@ fn find_batch((left, middle, right): (&str, &str, &str)) -> char {
     panic!()
 }
 
-tests!(day3, 157, 70);
+tests!( 157, 70);
