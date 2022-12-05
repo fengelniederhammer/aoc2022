@@ -1,9 +1,10 @@
+use crate::tests;
 use std::fs::read_to_string;
 use std::str::Lines;
-use crate::tests;
 
 fn ex1(input: String) -> usize {
-    input.lines()
+    input
+        .lines()
         .map(split_line)
         .map(find_duplicate)
         .map(score)
@@ -34,15 +35,13 @@ fn score(c: char) -> usize {
 
 fn ex2(input: String) -> usize {
     let groups = GroupIter {
-        inner: input.lines()
+        inner: input.lines(),
     };
 
-    groups.map(find_batch)
-        .map(score)
-        .sum()
+    groups.map(find_batch).map(score).sum()
 }
 
-struct GroupIter<'a>{
+struct GroupIter<'a> {
     inner: Lines<'a>,
 }
 
@@ -50,7 +49,7 @@ impl<'a> Iterator for GroupIter<'a> {
     type Item = (&'a str, &'a str, &'a str);
 
     fn next(&mut self) -> Option<Self::Item> {
-        Some((self.inner.next()?, self.inner.next()?,self.inner.next()?))
+        Some((self.inner.next()?, self.inner.next()?, self.inner.next()?))
     }
 }
 
@@ -63,4 +62,4 @@ fn find_batch((left, middle, right): (&str, &str, &str)) -> char {
     panic!()
 }
 
-tests!( 157, 70);
+tests!(157, 70);

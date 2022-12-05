@@ -1,10 +1,8 @@
-use std::fs::read_to_string;
 use crate::tests;
+use std::fs::read_to_string;
 
 fn ex1(input: String) -> usize {
-    input.split("\r\n\r\n")
-        .map(sum_part)
-        .max().unwrap()
+    input.split("\r\n\r\n").map(sum_part).max().unwrap()
 }
 
 fn sum_part(part: &str) -> usize {
@@ -14,7 +12,8 @@ fn sum_part(part: &str) -> usize {
 }
 
 fn ex2(input: String) -> usize {
-    let mut elves = input.split("\r\n\r\n")
+    let mut elves = input
+        .split("\r\n\r\n")
         .map(sum_part)
         .collect::<Vec<usize>>();
 

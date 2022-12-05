@@ -1,6 +1,6 @@
-use std::fs::read_to_string;
 use crate::day2::RPS::{Paper, Rock, Scissors};
 use crate::tests;
+use std::fs::read_to_string;
 
 enum RPS {
     Rock,
@@ -28,17 +28,18 @@ impl RPS {
         }
     }
 
-    fn outcome(&self, other: &Self ) -> usize {
+    fn outcome(&self, other: &Self) -> usize {
         match (self, other) {
-            (Rock, Rock)|(Paper,Paper)|(Scissors,Scissors) => 3,
-            (Rock, Scissors)|(Scissors, Paper)|(Paper, Rock) => 6,
-            _ => 0
+            (Rock, Rock) | (Paper, Paper) | (Scissors, Scissors) => 3,
+            (Rock, Scissors) | (Scissors, Paper) | (Paper, Rock) => 6,
+            _ => 0,
         }
     }
 }
 
 fn ex1(input: String) -> usize {
-    input.lines()
+    input
+        .lines()
         .map(map_line_to_pair)
         .map(|(other, me)| me.score() + me.outcome(&other))
         .sum()
@@ -50,7 +51,8 @@ fn map_line_to_pair(line: &str) -> (RPS, RPS) {
 }
 
 fn ex2(input: String) -> usize {
-    input.lines()
+    input
+        .lines()
         .map(map_to_rps_and_result)
         .map(|(other, result)| {
             let me = find_me(&other, result);
@@ -81,11 +83,11 @@ fn result_to_outcome_score(result: &str) -> usize {
     }
 }
 
-fn find_me(other: &RPS, outcome: usize)->RPS {
+fn find_me(other: &RPS, outcome: usize) -> RPS {
     [Rock, Paper, Scissors]
         .into_iter()
         .find(|it| it.outcome(other) == outcome)
         .unwrap()
 }
 
-tests!( 15, 12);
+tests!(15, 12);
