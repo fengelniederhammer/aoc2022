@@ -11,12 +11,10 @@ fn ex2(input: String) -> Vec<usize> {
 }
 
 fn find_marker<const MARKER_LENGTH: usize>(line: &str) -> usize {
-    line.chars()
-        .collect::<Vec<_>>()
-        .as_slice()
+    line.as_bytes()
         .windows(MARKER_LENGTH)
         .enumerate()
-        .find(|(_, window)| HashSet::<&char>::from_iter(window.iter()).len() == MARKER_LENGTH)
+        .find(|(_, window)| HashSet::<&u8>::from_iter(window.iter()).len() == MARKER_LENGTH)
         .map(|(i, _)| i + MARKER_LENGTH)
         .unwrap()
 }
