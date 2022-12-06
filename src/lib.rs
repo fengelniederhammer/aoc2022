@@ -5,6 +5,7 @@ mod day2;
 mod day3;
 mod day4;
 mod day5;
+mod day6;
 
 #[macro_export]
 macro_rules! tests {
@@ -17,11 +18,14 @@ macro_rules! tests {
             fn test_ex1() {
                 assert_eq!(
                     $b,
-                    ex1(read_to_string(format!("src/{}/testInput", crate::day!())).unwrap())
+                    ex1(
+                        std::fs::read_to_string(format!("src/{}/testInput", crate::day!()))
+                            .unwrap()
+                    )
                 );
                 println!(
-                    "{}",
-                    ex1(read_to_string(format!("src/{}/input", crate::day!())).unwrap())
+                    "{:?}",
+                    ex1(std::fs::read_to_string(format!("src/{}/input", crate::day!())).unwrap())
                 );
             }
         }
@@ -35,11 +39,14 @@ macro_rules! tests {
             fn test_ex1() {
                 assert_eq!(
                     $b,
-                    ex1(read_to_string(format!("src/{}/testInput", crate::day!())).unwrap())
+                    ex1(
+                        std::fs::read_to_string(format!("src/{}/testInput", crate::day!()))
+                            .unwrap()
+                    )
                 );
                 println!(
-                    "{}",
-                    ex1(read_to_string(format!("src/{}/input", crate::day!())).unwrap())
+                    "{:?}",
+                    ex1(std::fs::read_to_string(format!("src/{}/input", crate::day!())).unwrap())
                 );
             }
 
@@ -47,11 +54,14 @@ macro_rules! tests {
             fn test_ex2() {
                 assert_eq!(
                     $c,
-                    ex2(read_to_string(format!("src/{}/testInput", crate::day!())).unwrap())
+                    ex2(
+                        std::fs::read_to_string(format!("src/{}/testInput", crate::day!()))
+                            .unwrap()
+                    )
                 );
                 println!(
-                    "{}",
-                    ex2(read_to_string(format!("src/{}/input", crate::day!())).unwrap())
+                    "{:?}",
+                    ex2(std::fs::read_to_string(format!("src/{}/input", crate::day!())).unwrap())
                 );
             }
         }

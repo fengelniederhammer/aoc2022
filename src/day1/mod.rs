@@ -1,5 +1,4 @@
 use crate::tests;
-use std::fs::read_to_string;
 
 fn ex1(input: String) -> usize {
     input.split("\r\n\r\n").map(sum_part).max().unwrap()

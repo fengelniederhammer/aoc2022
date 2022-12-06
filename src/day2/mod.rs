@@ -1,6 +1,5 @@
 use crate::day2::RPS::{Paper, Rock, Scissors};
 use crate::tests;
-use std::fs::read_to_string;
 
 enum RPS {
     Rock,

@@ -1,5 +1,4 @@
 use crate::tests;
-use std::fs::read_to_string;
 use std::str::Lines;
 
 fn ex1(input: String) -> usize {
