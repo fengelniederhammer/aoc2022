@@ -78,7 +78,7 @@ fn ex2(input: String) -> usize {
         .map(|(dir, _)| {
             dirs.iter()
                 .filter(|(dir_, _)| dir_.to_string().starts_with(&dir.to_string()))
-                .filter_map(|(a, dir_type)| {
+                .filter_map(|(_, dir_type)| {
                     let size = match dir_type {
                         DirType::Dir => None,
                         DirType::File(size) => Some(size),
@@ -87,7 +87,7 @@ fn ex2(input: String) -> usize {
                 })
                 .sum()
         })
-        .filter(|(size): &(usize)| free_space + *size >= 30_000_000)
+        .filter(|size: &usize| free_space + *size >= 30_000_000)
         .min()
         .unwrap()
 }
