@@ -62,7 +62,6 @@ fn compute_steps_to_climb(
             return usize::MAX;
         }
         if path_endpoints.contains(&target) {
-            println!("{start:?} -> {target:?}: {i}");
             return i;
         }
     }

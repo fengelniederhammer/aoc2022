@@ -1,10 +1,9 @@
-extern crate core;
-
 mod day1;
 mod day10;
 mod day11;
 mod day12;
 mod day13;
+mod day14;
 mod day2;
 mod day3;
 mod day4;
@@ -30,6 +29,9 @@ macro_rules! tests {
                             .unwrap()
                     )
                 );
+            }
+
+            fn print_ex1() {
                 println!(
                     "{:?}",
                     ex1(std::fs::read_to_string(format!("src/{}/input", crate::day!())).unwrap())
@@ -51,6 +53,10 @@ macro_rules! tests {
                             .unwrap()
                     )
                 );
+            }
+
+            #[test]
+            fn print_ex1() {
                 println!(
                     "{:?}",
                     ex1(std::fs::read_to_string(format!("src/{}/input", crate::day!())).unwrap())
@@ -66,6 +72,10 @@ macro_rules! tests {
                             .unwrap()
                     )
                 );
+            }
+
+            #[test]
+            fn print_ex2() {
                 println!(
                     "{:?}",
                     ex2(std::fs::read_to_string(format!("src/{}/input", crate::day!())).unwrap())

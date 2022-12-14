@@ -1,6 +1,8 @@
-use crate::tests;
-use json::JsonValue;
 use std::cmp::Ordering;
+
+use json::JsonValue;
+
+use crate::tests;
 
 fn ex1(input: String) -> usize {
     input
